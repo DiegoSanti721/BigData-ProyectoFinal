@@ -1,0 +1,9 @@
+{
+	"name": "dsantillanae-datafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "aa804f89-0f3b-4d9a-9afb-79da3a3d8bce",
+		"tenantId": "5e65567a-9bbd-4f66-bb7e-d2ca84d27599"
+	}
+}
