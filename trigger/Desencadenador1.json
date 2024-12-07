@@ -1,0 +1,34 @@
+{
+	"name": "Desencadenador1",
+	"properties": {
+		"description": "Programamos la ejecución de todas las canalizaciones realizadas, desde el ingreso de la data a la capa bronce hasta la transformación en las siguientes capas, finalizando en la capa oro.",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Ejecutar_todo",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-12-07T04:38:00",
+				"endTime": "2024-12-09T04:38:00",
+				"timeZone": "SA Pacific Standard Time",
+				"schedule": {
+					"minutes": [
+						30
+					],
+					"hours": [
+						4
+					]
+				}
+			}
+		}
+	}
+}

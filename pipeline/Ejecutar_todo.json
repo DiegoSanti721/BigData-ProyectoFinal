@@ -1,0 +1,71 @@
+{
+	"name": "Ejecutar_todo",
+	"properties": {
+		"description": "Juntamos los tres procesos",
+		"activities": [
+			{
+				"name": "Capabronce_capaplata",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "copy_input_bronce",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Capabronce_capaplata",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "capaplata_capaoro",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Capabronce_capaplata",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "capaplata_capaoro",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "copy_input_bronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "copy_input_bronce",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
